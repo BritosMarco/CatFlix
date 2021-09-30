@@ -25,23 +25,8 @@ let FilmesService = class FilmesService {
     async deleteOneFilme(where) {
         return this.prisma.filme.delete({ where });
     }
-    async deleteAllFilmes() {
-        return this.prisma.filme.deleteMany();
-    }
     async updateOneFilme(filmeId, data) {
-        return this.prisma.filme.update({
-            data,
-            where: {
-                id: filmeId,
-            },
-        });
-    }
-    async getOneFilme(filmeId) {
-        return this.prisma.filme.findUnique({
-            where: {
-                id: filmeId,
-            },
-        });
+        return this.prisma.filme.update({ data, where: { id: filmeId } });
     }
 };
 FilmesService = __decorate([

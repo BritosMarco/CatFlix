@@ -18,27 +18,10 @@ export class FilmesService {
     return this.prisma.filme.delete({ where });
   }
 
-  async deleteAllFilmes() {
-    return this.prisma.filme.deleteMany();
-  }
-
   async updateOneFilme(
     filmeId: number,
     data: Prisma.FilmeCreateInput,
   ): Promise<Filme> {
-    return this.prisma.filme.update({
-      data,
-      where: {
-        id: filmeId,
-      },
-    });
-  }
-
-  async getOneFilme(filmeId: number): Promise<Filme> {
-    return this.prisma.filme.findUnique({
-      where: {
-        id: filmeId,
-      },
-    });
+    return this.prisma.filme.update({ data, where: { id: filmeId } });
   }
 }

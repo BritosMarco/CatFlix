@@ -36,12 +36,6 @@ export class FilmesController {
     return this.filmesService.deleteOneFilme({ id: Number(id) });
   }
 
-  @Delete('/delete')
-  @UsePipes(ValidationPipe)
-  async deleteMany() {
-    return this.filmesService.deleteAllFilmes();
-  }
-
   @Put('/altera/:id')
   @UsePipes(ValidationPipe)
   async update(
@@ -49,11 +43,5 @@ export class FilmesController {
     @Param('id', ParseIntPipe) id: number,
   ): Promise<Filme> {
     return this.filmesService.updateOneFilme(id, updateFilme);
-  }
-
-  @Get('/lista/:id')
-  @UsePipes(ValidationPipe)
-  async findUnique(@Param('id', ParseIntPipe) id: number) {
-    return this.filmesService.getOneFilme(id);
   }
 }
