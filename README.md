@@ -1,5 +1,5 @@
 <h1 align="center">
-  NestJS Movies
+  NestJS CatFlix
 </h1>
 
 <p align="center">
