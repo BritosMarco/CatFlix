@@ -32,7 +32,7 @@ export class GeneroController {
     return this.generoService.createGenero(createGenero);
   }
 
-  @Put('/alterar/:id')
+  @Put('/update/:id')
   @UsePipes(ValidationPipe)
   async update(
     @Body() updateGenero: CreateGeneroDto,
@@ -41,7 +41,7 @@ export class GeneroController {
     return this.generoService.updateOneGenero(id, updateGenero);
   }
 
-  @Delete('/lista/:id')
+  @Delete('/delete/:id')
   @UsePipes(ValidationPipe)
   async delete(@Param('id') id: string) {
     return this.generoService.deleteOneGenero({ id: Number(id) });

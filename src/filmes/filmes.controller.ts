@@ -30,13 +30,13 @@ export class FilmesController {
     return this.filmesService.createFilme(createFilme);
   }
 
-  @Delete('/lista/:id')
+  @Delete('/delete/:id')
   @UsePipes(ValidationPipe)
   async delete(@Param('id') id: string) {
     return this.filmesService.deleteOneFilme({ id: Number(id) });
   }
 
-  @Put('/altera/:id')
+  @Put('/update/:id')
   @UsePipes(ValidationPipe)
   async update(
     @Body() updateFilme: CreateFilmeDto,

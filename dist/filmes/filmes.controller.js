@@ -49,7 +49,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], FilmesController.prototype, "create", null);
 __decorate([
-    (0, common_1.Delete)('/lista/:id'),
+    (0, common_1.Delete)('/delete/:id'),
     (0, common_1.UsePipes)(common_1.ValidationPipe),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
@@ -57,7 +57,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], FilmesController.prototype, "delete", null);
 __decorate([
-    (0, common_1.Put)('/altera/:id'),
+    (0, common_1.Put)('/update/:id'),
     (0, common_1.UsePipes)(common_1.ValidationPipe),
     __param(0, (0, common_1.Body)()),
     __param(1, (0, common_1.Param)('id', common_1.ParseIntPipe)),

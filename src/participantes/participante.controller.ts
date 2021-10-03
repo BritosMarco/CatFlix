@@ -13,7 +13,6 @@ import {
 import { CreateParticipanteDto } from './dto/create.participante.dto';
 import { ParticipanteService } from './participante.service';
 import { Participante } from '.prisma/client';
-import { async } from 'rxjs';
 
 @Controller('participante')
 export class ParticipanteController {
@@ -25,7 +24,7 @@ export class ParticipanteController {
     return this.participanteService.listAllParticipante();
   }
 
-  @Post('/Create')
+  @Post('/create')
   @UsePipes(ValidationPipe)
   async create(
     @Body() createParticipante: CreateParticipanteDto,
@@ -33,7 +32,7 @@ export class ParticipanteController {
     return this.participanteService.createParticipante(createParticipante);
   }
 
-  @Put('/alterar/:id')
+  @Put('/update/:id')
   @UsePipes(ValidationPipe)
   async update(
     @Body() updateParticipante: CreateParticipanteDto,
@@ -45,7 +44,7 @@ export class ParticipanteController {
     );
   }
 
-  @Delete('/lista/:id')
+  @Delete('/delete/:id')
   @UsePipes(ValidationPipe)
   async delete(@Param('id') id: string) {
     return this.participanteService.deleteOneParticipante({ id: Number(id) });

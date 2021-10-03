@@ -8,28 +8,28 @@ datasource db {
 }
 
 model Filme {
-  id     Int  @default(autoincrement()) @id
-  nome   String
-  imagem String?
-  lancamento String
-  duracao String
+  id            Int            @id @default(autoincrement())
+  nome          String
+  imagem        String?
+  lancamento    String
+  duracao       String
   participantes Participante[]
-  generos Genero[]
+  generos       Genero[]
 }
 
-model Participante{
-  id Int @default(autoincrement()) @id
-  nome String
-  imagem String?
-  datanascimento String?
-  filme Filme? @relation(fields: [filmeId], references: id)
-  filmeId Int?
-
+model Participante {
+  id             Int     @id @default(autoincrement())
+  nome           String
+  imagem         String?
+  data_nascimento String?
+  participacao  String
+  filme          Filme?  @relation(fields: [filmeId], references: [id])
+  filmeId        Int?
 }
 
-model Genero{
-  id Int @default(autoincrement()) @id
-  nome String
-  filme Filme? @relation(fields: [filmeId], references: id)
+model Genero {
+  id      Int    @id @default(autoincrement())
+  nome    String
+  filme   Filme? @relation(fields: [filmeId], references: [id])
   filmeId Int?
 }

@@ -18,8 +18,16 @@ __decorate([
     __metadata("design:type", String)
 ], CreateParticipanteDto.prototype, "nome", void 0);
 __decorate([
+    (0, class_validator_1.IsNotEmpty)(),
+    __metadata("design:type", String)
+], CreateParticipanteDto.prototype, "participacao", void 0);
+__decorate([
     (0, class_validator_1.IsOptional)(),
     __metadata("design:type", String)
 ], CreateParticipanteDto.prototype, "imagem", void 0);
+__decorate([
+    (0, class_validator_1.IsOptional)(),
+    __metadata("design:type", String)
+], CreateParticipanteDto.prototype, "data_nascimento", void 0);
 exports.CreateParticipanteDto = CreateParticipanteDto;
 //# sourceMappingURL=create.participante.dto.js.map
