@@ -3,10 +3,8 @@
 </h1>
 
 <p align="center">
-  <img src="https://img.shields.io/github/license/isabellanunes/nestjs-movies?style=flat-square" />
-  <img src="https://img.shields.io/github/languages/count/isabellanunes/nestjs-movies?style=flat-square" />
-  <img src="https://img.shields.io/github/repo-size/isabellanunes/nestjs-movies?style=flat-square" />
-  <img src="https://img.shields.io/github/last-commit/isabellanunes/nestjs-movies?style=flat-square" />
+
+  <img src="https://blog.theodo.com/static/dfa7994d6389d439e8a14bc09d03326b/a79d3/1_cZXAov35eTfE545EiuGFqQ.png" />
 </p>
 
 <br />
