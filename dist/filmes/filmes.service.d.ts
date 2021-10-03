@@ -1,10 +1,14 @@
 import { Filme, Prisma } from '.prisma/client';
 import { PrismaService } from 'src/prisma/prisma.service';
+import { CreateFilmeDto } from 'src/filmes/dto/create-filme.dto';
 export declare class FilmesService {
     private prisma;
     constructor(prisma: PrismaService);
     listAllFilmes(): Promise<Filme[]>;
-    createFilme(data: Prisma.FilmeCreateInput): Promise<Filme>;
+    createFilme(post: CreateFilmeDto): Promise<Filme & {
+        participantes: import(".prisma/client").Participante[];
+        generos: import(".prisma/client").Genero[];
+    }>;
     deleteOneFilme(where: Prisma.FilmeWhereUniqueInput): Promise<Filme>;
-    updateOneFilme(filmeId: number, data: Prisma.FilmeCreateInput): Promise<Filme>;
+    updateOneFilme(id: number, post: CreateFilmeDto): Promise<Filme>;
 }

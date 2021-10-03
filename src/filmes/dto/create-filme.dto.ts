@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsOptional } from 'class-validator';
+import { IsNotEmpty, IsOptional, IsNumber } from 'class-validator';
 
 export class CreateFilmeDto {
   @IsNotEmpty()
@@ -13,5 +13,12 @@ export class CreateFilmeDto {
   @IsOptional()
   imagem: string;
 
+  @IsOptional()
+  @IsNumber({}, { each: true })
+  participantes?: number[];
 
+  @IsOptional()
+  @IsNumber({}, { each: true })
+  generos?: number[];
 }
+
