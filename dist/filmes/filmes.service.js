@@ -67,9 +67,7 @@ let FilmesService = class FilmesService {
                 generos: true,
                 participantes: true,
             },
-            where: {
-                id,
-            },
+            where: { id },
         });
     }
 };

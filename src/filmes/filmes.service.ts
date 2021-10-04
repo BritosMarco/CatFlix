@@ -62,12 +62,15 @@ export class FilmesService {
       id: genero, 
     }));
     return await this.prisma.filme.update({
-      data: 
-        Object.assign(Object.assign({}, data), { participantes: {
-                    connect: participantes,
-                }, generos: {
-                    connect: generos,
-                } }),
+      data: {
+        ...data,
+        participantes: {
+          connect: participantes,
+        },
+        generos: {
+          connect: generos,
+        },
+      },
             include: {
                 generos: true,
                 participantes: true,
@@ -75,9 +78,7 @@ export class FilmesService {
         /* ...post,
         id: undefined, */
       
-      where: {
-        id,
-      }, 
+      where: { id }, 
     });
   }
 } 
