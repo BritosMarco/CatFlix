@@ -10,5 +10,8 @@ export declare class FilmesService {
         generos: import(".prisma/client").Genero[];
     }>;
     deleteOneFilme(where: Prisma.FilmeWhereUniqueInput): Promise<Filme>;
-    updateOneFilme(id: number, post: CreateFilmeDto): Promise<Filme>;
+    updateOneFilme(id: any, data: any): Promise<Filme & {
+        participantes: import(".prisma/client").Participante[];
+        generos: import(".prisma/client").Genero[];
+    }>;
 }

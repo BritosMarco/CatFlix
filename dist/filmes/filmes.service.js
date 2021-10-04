@@ -49,9 +49,24 @@ let FilmesService = class FilmesService {
     async deleteOneFilme(where) {
         return this.prisma.filme.delete({ where });
     }
-    async updateOneFilme(id, post) {
+    async updateOneFilme(id, data) {
+        var _a, _b;
+        const participantes = (_a = data.participantes) === null || _a === void 0 ? void 0 : _a.map((participante) => ({
+            id: participante,
+        }));
+        const generos = (_b = data.generos) === null || _b === void 0 ? void 0 : _b.map((genero) => ({
+            id: genero,
+        }));
         return await this.prisma.filme.update({
-            data: Object.assign(Object.assign({}, post), { id: undefined }),
+            data: Object.assign(Object.assign({}, data), { participantes: {
+                    connect: participantes,
+                }, generos: {
+                    connect: generos,
+                } }),
+            include: {
+                generos: true,
+                participantes: true,
+            },
             where: {
                 id,
             },
