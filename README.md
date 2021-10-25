@@ -1,5 +1,5 @@
 <h1 align="center">
-  NestJS CatFlix
+  NestJS Projeto Bacj end para Stream
 </h1>
 
 <p align="center">
