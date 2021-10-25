@@ -1,5 +1,5 @@
 <h1 align="center">
-  NestJS Projeto Bacj end para Stream
+  Projeto Back end para Stream
 </h1>
 
 <p align="center">
